@@ -17,7 +17,7 @@ class App extends React.Component {
       <div>
         <p>stuff goes here</p>
       </div>
-    )
+    );
   }
 }
 
