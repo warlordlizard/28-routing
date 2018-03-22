@@ -6,6 +6,7 @@ import ReactDom from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import Landing from './components/landing';
+import Dashboard from './components/dashboard';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +14,18 @@ class App extends React.Component {
     this.state = {
       notes: [],
     };
+    this.getApp = this.getApp.bind(this);
+  }
+
+  getApp() {
+    return {
+      state: this.state,
+      setState: this.setState.bind(this),
+    };
+  }
+
+  componentDidUpdate() {
+    console.log('__STATE__', this.state);
   }
 
   render() {
@@ -21,6 +34,7 @@ class App extends React.Component {
         <BrowserRouter>
           <section>
             <Route exact path='/' component={Landing} />
+            <Route exact path='/dashboard' component={() => <Dashboard app={this.getApp()} />} />
           </section>
         </BrowserRouter>  
         <div>
