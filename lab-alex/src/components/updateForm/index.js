@@ -1,9 +1,9 @@
 'use strict';
 
+import './_updateform.scss';
 import React from 'react';
-import './_noteform.scss';
 
-class NoteForm extends React.Component {
+class UpdateForm extends React.Component {
   constructor(props) {
     super(props);
     
@@ -40,16 +40,17 @@ class NoteForm extends React.Component {
     return(
       <form className='note-form' onSubmit={this.handleSubmit}>
         <input
+          className='input'
           name='content'
-          value={this.state.content}
+          value=''
           type='text'
           onChange={this.handleChange}
-          placeholder='...'
+          placeholder={this.state.content}
           required='true' />
-        <button className='form-button' type='submit'>{this.props.submitTitle}</button>
+        <button type='submit'>{this.props.submitTitle}</button>
       </form>  
     );
   }
 }
 
-export default NoteForm;
+export default UpdateForm;

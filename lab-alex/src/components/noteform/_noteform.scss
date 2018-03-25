@@ -1,0 +1,43 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+
+
+.form-button {
+  @include border-radius(5px);
+  background-color: #888;
+  color: #fff;
+}
+
+
+
+
+// %input-shared {
+//   border: 1px solid #ccc;
+//   padding: 10px;
+//   color: #333;
+// }
+
+// .input {
+//   @extend %input-shared;
+// }
+
+// .success {
+//   @extend %input-shared;
+//   border-color: green;
+// }
+
+// .error {
+//   @extend %input-shared;
+//   border-color: red;
+// }
+
+// button input {
+//   @include border-radius(10px);
+// }
